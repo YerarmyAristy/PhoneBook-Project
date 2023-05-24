@@ -1,0 +1,78 @@
+<mat-toolbar class="bg-primary">
+  <span style="color: white">My PhoneBook</span>
+  <span class="example-spacer"></span>
+  <button
+    class="bg-white"
+    style="color: rgb(18, 18, 18)"
+    mat-raised-button
+    (click)="openCrudOpForm()"
+  >
+    Add Contact
+  </button>
+</mat-toolbar>
+
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="container" id="page-container">
+  <div class="row">
+    <div *ngFor="let contact of contacts" class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row">
+          <div class="col-6">
+            <a href=""
+              ><img
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                alt=""
+                class="img-fluid rounded-circle w-60"
+            /></a>
+          </div>
+
+          <div class="col-6 card-title align-self-center mb-0">
+            <h5>
+              {{ contact?.firstName }} {{ contact?.middleInitial }}.
+              {{ contact?.lastName }}
+            </h5>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <i class="fa fa-envelope float-right"></i>Email :
+            <a href="#">{{ contact?.email }}</a>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-phone float-right"> </i>Phone # :
+            {{ contact?.phoneNumber }}
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-home float-right"></i>Address :
+            <a href="#">{{ contact?.address }}</a>
+          </li>
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <a
+              href="#"
+              class="btn btn-primary tooltips"
+              (click)="editContact(contact)"
+              data-placement="top"
+              data-toggle="tooltip"
+              data-original-title="Edit"
+              ><i class="fa fa-pencil"></i>
+            </a>
+            <a
+              href="#"
+              class="btn btn-red tooltips"
+              (click)="deleteContact(contact.id)"
+              data-placement="top"
+              data-toggle="tooltip"
+              data-original-title="Delete"
+              ><i class="fa fa-times"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
