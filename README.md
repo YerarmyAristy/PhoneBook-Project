@@ -1,27 +1,72 @@
-# NewPhoneBookApp
+# PhoneBookApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+This repository contains the PhoneBook Project, a Java Spring Boot application with Angular CLI for managing contacts in a phonebook.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Add a new contact with first name, phone number, and email address.
+- View the list of existing contacts.
+- Edit an existing contact.
+- Delete a contact from the phonebook.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Java
+- Spring Boot
+- Spring MVC
+- Angular CLI (for frontend templating)
+- PostgreSQL (as the database)
 
-## Build
+## Local Deployment
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To deploy the PhoneBookApp locally, follow these steps:
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Java Development Kit (JDK) 8 or above
+- Apache Maven or Gradle
+- Node.js and npm (Node Package Manager)
+- PostgreSQL
 
-## Running end-to-end tests
+### Backend Deployment
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Navigate to the backend directory:
 
-## Further help
+   ```shell
+   cd SBS/phoneBook
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Build the backend:
+	mvn clean install
+
+3. Configure the database connection in the src/main/resources/application.properties file.
+
+4. Run the backend server:
+
+For Maven:
+	mvn spring-boot:run 
+  
+  
+  ### Frontend Deployment
+1. Navigate to the frontend directory:
+    ```shell
+      cd frontend
+
+3. Install the project dependencies:
+       ```shell
+        npm install
+
+5.  Build the frontend:
+
+       ```shell
+       ng build --prod
+  
+ 4.The production-ready build files will be generated in the dist/ directory.
+
+Accessing the Application
+Once both the backend and frontend are deployed:
+
+1. Open a web browser and navigate to http://localhost:4200/ to access the application.
+
+2. You can now use the PhoneBookApp to manage contacts in the phonebook.
+
+
